@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <!-- create-participants -->
+  <form [formGroup]="eventsForm" (ngSubmit)="onSubmit()" class="add-form">
+    <h1 class="title">Create Event Category</h1>
+    <div class="form-control">
+      <label for="text">Category Name</label>
+      <input
+        type="text"
+        name="text"
+        id="text"
+        placeholder="Add event's name"
+        formControlName="name"
+      />
+    </div>
+    <div class="form-control">
+      <label for="day">Category Description</label>
+      <input
+        name="day"
+        id="day"
+        placeholder="Add organizer"
+        formControlName="description"
+      />
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="eventsForm.invalid || eventsForm.pristine"
+      [class.disabled]="eventsForm.invalid || eventsForm.pristine"
+      class="btn btn-block"
+    >
+      {{ eventId ? "Update" : "Submit" }}
+    </button>
+  </form>
+</div>

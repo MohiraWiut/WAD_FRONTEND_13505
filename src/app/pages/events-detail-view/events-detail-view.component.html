@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <h1 class="numberOfEvent">Event: {{ eventsDetail.id }}</h1>
+  <div class="items">
+    <div class="itemWrapper">
+      <h1 class="Title">Event Name</h1>
+      <h2 class="name">{{ eventsDetail.name }}</h2>
+    </div>
+    <div class="itemWrapper">
+      <h1 class="Title">Description</h1>
+      <h2 class="name">{{ eventsDetail.description }}</h2>
+    </div>
+    <div class="itemWrapper">
+      <h1 class="Title">Date</h1>
+      <h2 class="name">{{ eventsDetail.date }}</h2>
+    </div>
+    <div class="itemWrapper">
+      <h1 class="Title">Location</h1>
+      <h2 class="name">{{ eventsDetail.location }}</h2>
+    </div>
+  </div>
+
+  <h1 class="numberOfEvent">
+    Event Category: {{ eventsDetail.eventCategory.id }}
+  </h1>
+  <div class="items">
+    <div class="itemWrapper">
+      <h1 class="Title">Event Category Name</h1>
+      <h2 class="name">{{ eventsDetail.eventCategory.name }}</h2>
+    </div>
+    <div class="itemWrapper">
+      <h1 class="Title">Event Category Description</h1>
+      <h2 class="name">{{ eventsDetail.eventCategory.description }}</h2>
+    </div>
+  </div>
+</div>

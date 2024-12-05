@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <!-- create-eventCategories -->
+  <form [formGroup]="eventsForm" (ngSubmit)="onSubmit()" class="add-form">
+    <h1 class="title">Create Event</h1>
+    <div class="form-control">
+      <label for="text">Name of Events</label>
+      <input
+        type="text"
+        name="text"
+        id="text"
+        placeholder="Add event name"
+        formControlName="name"
+      />
+    </div>
+    <div class="form-control">
+      <label for="description">Description</label>
+      <input
+        name="description"
+        id="description"
+        placeholder="Add Description"
+        formControlName="description"
+      />
+    </div>
+    <div class="form-control">
+      <label for="date">Date</label>
+      <input
+        type="date"
+        name="date"
+        id="date"
+        placeholder="Add Date"
+        formControlName="date"
+      />
+    </div>
+    <div class="form-control">
+      <label for="location">Location</label>
+      <input
+        name="location"
+        id="location"
+        placeholder="Add Location"
+        formControlName="location"
+      />
+    </div>
+    <div class="form-control form-control-check">
+      <label for="eventCategoryId">Select Category</label>
+      <select
+        name="eventCategoryId"
+        id="eventCategoryId"
+        formControlName="eventCategoryId"
+        class="selector"
+      >
+        <option value="">Select Category</option>
+        @for (item of eventCategories; track item.id) {
+        <option [value]="item.id">{{ item.name }}</option>
+        }
+      </select>
+    </div>
+    <button
+      type="submit"
+      [disabled]="eventsForm.invalid || eventsForm.pristine"
+      [class.disabled]="eventsForm.invalid || eventsForm.pristine"
+      class="btn btn-block"
+    >
+      {{ eventsId ? "Update" : "Submit" }}
+    </button>
+  </form>
+</div>

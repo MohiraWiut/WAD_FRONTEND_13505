@@ -1,0 +1,28 @@
+<header>
+  <div class="logo__wrapper">
+    <div class="logo">
+      <a href="" class="items">
+        <h3>Event Management</h3>
+      </a>
+    </div>
+  </div>
+  <div class="pages">
+    <button mat-raised-button (click)="btnClick('events')">Events</button>
+
+    <button mat-raised-button (click)="btnClick('event-categories')">
+      Event Categories
+    </button>
+  </div>
+  <a
+    [style.display]="
+      router.url !== '/events' && router.url !== '/event-categories'
+        ? 'none'
+        : 'block'
+    "
+    class="btn"
+    [href]="
+      router.url === '/events' ? '/create-events' : '/create-event-categories'
+    "
+    >Create</a
+  >
+</header>
